@@ -8,7 +8,7 @@ public interface VehicleService {
 
     public void addVehicle(Vehicle vehicle);
 
-    public Vehicle deleteVehicle(int vehicleID);
+    public boolean deleteVehicle(int vehicleID);
 
     public boolean updateVehicleAvailability(int vehicleID, boolean isAvailable);
 
