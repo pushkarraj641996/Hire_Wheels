@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface VehicleCategoryDAO extends JpaRepository<VehicleCategory, Integer> {
 
-    public List<VehicleCategory> findByName(String category);
+    public VehicleCategory findByName(String category);
 
 }

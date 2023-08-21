@@ -65,7 +65,8 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public List<Vehicle> getAllAvailableVehicles(String category, Date pickupDate, Date dropOffDate, int locationID) {
         List<VehicleCategory> availableVehiclesList = new LinkedList<>();
-        availableVehiclesList = _vehicleCategoryDAO.findByName(category);
+        _vehicleCategoryDAO.findByName(category).getVehicleSubCategoryList()
+                .forEach();
         return null;
     }
 }
