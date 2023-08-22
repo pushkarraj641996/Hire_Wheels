@@ -52,6 +52,11 @@ public class VehicleSubCategory {
         return vehicleCategory;
     }
 
+
+    public Set<Vehicle> getVehicleList() {
+        return vehicleList;
+    }
+
     public void setVehicleCategory(VehicleCategory vehicleCategory) {
         this.vehicleCategory = vehicleCategory;
     }

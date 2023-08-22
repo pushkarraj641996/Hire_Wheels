@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 public class VehicleCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "vehicle_category_id", nullable = false)
     private int id;
 
     @Column(name = "vehicle_category_name", length = 50, nullable = false, unique = true)

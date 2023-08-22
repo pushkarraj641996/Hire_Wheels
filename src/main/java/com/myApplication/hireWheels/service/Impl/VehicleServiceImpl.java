@@ -4,6 +4,7 @@ import com.myApplication.hireWheels.DAO.VehicleCategoryDAO;
 import com.myApplication.hireWheels.DAO.VehicleDAO;
 import com.myApplication.hireWheels.entities.Vehicle;
 import com.myApplication.hireWheels.entities.VehicleCategory;
+import com.myApplication.hireWheels.entities.VehicleSubCategory;
 import com.myApplication.hireWheels.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -64,9 +65,16 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public List<Vehicle> getAllAvailableVehicles(String category, Date pickupDate, Date dropOffDate, int locationID) {
-        List<VehicleCategory> availableVehiclesList = new LinkedList<>();
-        _vehicleCategoryDAO.findByName(category).getVehicleSubCategoryList()
-                .forEach();
+        List<Vehicle> availableVehiclesList = new LinkedList<>();
+        _vehicleCategoryDAO.findByName(category).getVehicleSubCategoryList().forEach(vehicleSubCategory -> vehicleSubCategory.getVehicleList().forEach(vehicle -> {
+            if ( vehicle.getLocation().getId() == locationID && vehicle.isAvailable() == true ) {
+                availableVehiclesList.add(vehicle);
+            }
+        }));
+
+        for(Vehicle vehicle : availableVehiclesList) {
+            if (  )
+        }
         return null;
     }
 }
